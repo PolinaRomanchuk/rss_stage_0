@@ -1,6 +1,5 @@
 :root {
-    max-width: 1280px;
-    margin: 0 auto;
+
     scroll-behavior: smooth;
 
     --font-family: "Georgia", sans-serif;
@@ -26,12 +25,20 @@ body {
 
 .start-page {
     background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
+    background-size: cover;
+    background-size: 100%;
+
+}
+
+.wraper {
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    margin: 30px 40px 60px 40px;
+    padding: 30px 40px 60px 40px;
 }
 
 .header-container {
@@ -67,7 +74,7 @@ header {
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-s);
-    transition: 0.3s;
+    transition: color 0.3s ease-in-out;
 
     &.first {
         color: var(--color-light-s);
@@ -76,7 +83,7 @@ header {
     }
 
     &:hover {
-        color: rgb(255, 255, 255);
+        color: var(--color-light-s);
     }
 }
 
@@ -116,6 +123,7 @@ header {
     height: 52px;
     background: var(--color-primary);
     border: none;
+    transition: background-color 0.3s ease-in-out;
 
     & p {
         margin: 0;
@@ -124,6 +132,11 @@ header {
         line-height: 130%;
         letter-spacing: 0.06em;
         color: var(--color-dark-3xl);
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-primary-light);
     }
 }
 
@@ -143,12 +156,14 @@ header {
 .about-container {
     display: flex;
     background: var(--color-light-xl);
-    margin: 80px 40px 100px 40px;
+    padding: 80px 40px 100px 40px;
 }
 
-.about-img {
-    margin-left: 175px;
+.wraper.about {
+    display: flex;
 }
+
+
 
 .about-text-container {
     margin: 14px 0 0 120px;
@@ -203,20 +218,42 @@ header {
 .arrow {
     border: none;
     background: none;
-    padding: 190px 53px 403px 40px;
+    padding: 190px 8px 403px 40px;
 
     &.right {
-        padding: 190px 40px 403px 0;
+        padding: 190px 40px 403px 8px;
     }
+
 }
+
+svg.arrow-svg {
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+svg.arrow-svg:hover {
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: var(--color-primary-light);
+}
+
 
 .pet-cart-container {
     display: flex;
 }
 
-.pet-cart:last-child {
-    width: 324px;
+.pet-cart:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+    cursor: pointer;
+
 }
+
+.pet-cart {
+    padding-right: 45px;
+    padding-left: 45px;
+}
+
+
 
 .pet-name {
     margin: 25px 0 31px 96px;
@@ -233,9 +270,10 @@ header {
 .learn-more-button {
     border-radius: 100px;
     width: 187px;
-    margin: 0 132px 0 41px;
-    background: rgba(241, 205, 179, 1);
-    border: none;
+    margin: 0 0 0 41px;
+    background: none;
+    border: var(--color-primary-light) solid 2px;
+    transition: background-color 0.3s ease-in-out;
 
     & p {
         color: var(--color-dark-3xl);
@@ -243,6 +281,11 @@ header {
         font-size: 17px;
         line-height: 90%;
         letter-spacing: 0.06em;
+    }
+
+    &:hover {
+        background: var(--color-primary-light);
+        cursor: pointer;
     }
 }
 
@@ -253,6 +296,7 @@ header {
     margin: 64px 0 0 510px;
     background: var(--color-primary);
     border: none;
+    transition: background-color 0.3s ease-in-out;
 
     & p {
         margin: 0;
@@ -262,18 +306,22 @@ header {
         letter-spacing: 0.06em;
         color: var(--color-dark-3xl);
     }
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-primary-light);
+
+    }
 }
 
 .help-container {
     background: var(--color-light-xl);
-    max-width: 1200px;
-    margin: 0 auto;
     padding-bottom: 44px;
 }
 
 .help-header {
     width: 310px;
-    padding: 76px 0 60px 446px;
+    padding: 76px 0 60px 486px;
     text-align: center;
     font-family: var(--font-family);
     font-size: 35px;
@@ -287,6 +335,10 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.wraper.help {
+    max-width: 1200px;
 }
 
 .help-icon-container {
@@ -314,7 +366,7 @@ header {
 }
 
 .donation-container {
-    padding: 35px 182px 100px 183px;
+    padding: 35px 182px 100px 257px;
     display: flex;
 }
 
@@ -371,16 +423,18 @@ header {
     line-height: 150%;
     color: var(--color-dark-m);
     padding-top: 20px;
+    width: 380px;
 }
 
 #contacts {
     background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
+    background-size: cover;
+    background-size: 100%;
 }
 
 .contacts-container {
-    max-width: 1200px;
     display: flex;
-    padding: 40px 40px 0 40px;
+    padding: 40px 0px 0 80px;
 }
 
 .contacts-header {
