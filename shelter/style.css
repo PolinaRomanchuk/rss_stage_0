@@ -501,3 +501,106 @@ svg.arrow-svg:hover {
     margin-top: -6px;
     width: 254px;
 }
+
+.header-container.our-pets {
+    padding-right: 495px;
+}
+
+.header-our-pets-page {
+    background: var(--color-light-xl);
+    padding-bottom: 30px;
+}
+
+.header-container-our-pets-page {
+    display: flex;
+}
+
+
+.title-site.our-pets {
+    line-height: 110%;
+    color: var(--color-dark-l);
+}
+
+.subtitle-site.our-pets {
+    color: var(--color-dark-3xl);
+}
+
+.navigation-link.our-pets {
+    color: var(--color-dark-l);
+}
+
+.navigation-link.our-pets.active {
+    color: var(--color-dark-3xl);
+    text-decoration: underline solid var(--color-primary) 3px;
+    text-underline-offset: 7px;
+}
+
+
+.our-pets-header.our-pets-page {
+    padding: 80px 0 0 0;
+}
+
+.our-pets-main-content {
+    background-color: var(--color-light-l);
+    padding-bottom: 101px;
+}
+
+
+.pet-cart-container.our-pets-page {
+    flex-wrap: wrap;
+    margin: 45px 0 0 0;
+}
+
+.pet-cart.our-pets-page {
+    padding: 14px 0 44px 40px;
+    line-height: 128%;
+}
+
+.learn-more-button.our-pets-page {
+    background: var(--color-light-s);
+    border: solid var(--color-primary) 2px;
+    margin: 0 43px 0 40px;
+}
+
+.pet-cart:last-child {
+    width: auto;
+}
+
+.btn-container {
+    display: flex;
+}
+
+.btn-paginator {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: none;
+    margin-right: 20px;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    text-align: center;
+
+    &.inactive {
+        font-family: var(--font-family);
+        color: var(--color-dark-s);
+        border: var(--color-dark-s) solid 2px;
+    }
+
+    &.active {
+        font-family: var(--font-family);
+        color: var(--color-dark-3xl);
+        background: var(--color-primary);
+        border: none;
+    }
+
+    &.next {
+        font-family: var(--font-family);
+        color: var(--color-dark-3xl);
+        border: var(--color-primary) solid 2px;
+    }
+}
+
+.btn-container {
+    margin: 43px 0 0 471px;
+}
