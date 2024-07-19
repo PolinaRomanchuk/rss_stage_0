@@ -32,7 +32,9 @@ header {
     margin: 0 auto;
 }
 
-
+a {
+    text-decoration: none;
+}
 
 .start-page {
     background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
@@ -50,6 +52,7 @@ header {
     line-height: 111%;
     letter-spacing: 0.06em;
     color: var(--color-primary);
+
 }
 
 .subtitle-site {
@@ -123,15 +126,18 @@ header {
     background: var(--color-primary);
     border: none;
     transition: background-color 0.3s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
 
-    & p {
-        margin: 0;
-        font-family: var(--font-family);
-        font-size: 17px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
-        color: var(--color-dark-3xl);
-    }
+
+    font-family: var(--font-family);
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+
 
     &:hover {
         cursor: pointer;
@@ -290,14 +296,15 @@ svg.arrow-svg:hover {
     border: none;
     transition: background-color 0.3s ease-in-out;
 
-    & p {
-        margin: 0;
-        font-family: var(--font-family);
-        font-size: 17px;
-        line-height: 130%;
-        letter-spacing: 0.06em;
-        color: var(--color-dark-3xl);
-    }
+    font-family: var(--font-family);
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: var(--color-dark-3xl);
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    align-content: center;
 
     &:hover {
         cursor: pointer;
