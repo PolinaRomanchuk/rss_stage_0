@@ -92,6 +92,7 @@ h1 {
         color: var(--color-light-s);
         text-decoration: underline solid var(--color-primary) 3px;
         text-underline-offset: 7px;
+        cursor: default;
     }
 
     &:hover {
@@ -614,9 +615,9 @@ svg.arrow-svg {
         font-family: var(--font-family);
         color: var(--color-dark-s);
         border: var(--color-dark-s) solid 2px;
-
+        
         &:hover {
-            cursor: pointer;
+            cursor: not-allowed;
         }
     }
 
