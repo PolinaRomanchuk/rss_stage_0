@@ -36,13 +36,19 @@ a {
     text-decoration: none;
 }
 
+h2,
+h1 {
+    font-weight: normal;
+    margin: 0;
+}
+
 .start-page {
     background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
     background-size: cover;
     background-size: 100%;
 }
 
-.header-container {
+.logo-container {
     height: 60px;
 }
 
@@ -52,7 +58,11 @@ a {
     line-height: 111%;
     letter-spacing: 0.06em;
     color: var(--color-primary);
+    transition: color 0.3s ease-in-out;
 
+    &:hover {
+        color: var(--color-light-l);
+    }
 }
 
 .subtitle-site {
@@ -78,7 +88,7 @@ a {
     color: var(--color-dark-s);
     transition: color 0.3s ease-in-out;
 
-    &.first {
+    &.active {
         color: var(--color-light-s);
         text-decoration: underline solid var(--color-primary) 3px;
         text-underline-offset: 7px;
@@ -94,12 +104,12 @@ a {
     justify-content: space-between;
 }
 
-.content-text-container {
+.start-page-content-text-container {
     padding-top: 194px;
     padding-left: 40px;
 }
 
-.content-text-header {
+.start-page-content-text-header {
     width: 310px;
     padding-bottom: 42px;
     margin: 0;
@@ -110,7 +120,7 @@ a {
     font-weight: normal;
 }
 
-.content-text-desc {
+.start-page-content-text-desc {
     width: 460px;
     margin-bottom: 42px;
     font-family: var(--second-family);
@@ -119,25 +129,20 @@ a {
     color: var(--color-dark-s);
 }
 
-.make-friend-button {
+.start-page-button-go-to-pets {
     border-radius: 100px;
     width: 207px;
     height: 52px;
-    background: var(--color-primary);
+    background-color: var(--color-primary);
     border: none;
     transition: background-color 0.3s ease-in-out;
     display: inline-block;
-    text-decoration: none;
     text-align: center;
     align-content: center;
-
-
     font-family: var(--font-family);
     font-size: 17px;
-    line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
-
 
     &:hover {
         cursor: pointer;
@@ -146,10 +151,7 @@ a {
 }
 
 .content-img {
-    width: 698px;
     height: 728px;
-    padding: 0;
-    margin: 0;
     padding-right: 40px;
     padding-top: 30px;
 
@@ -231,26 +233,25 @@ a {
 svg.arrow-svg {
     transition: background-color 0.3s ease-in-out;
     border-radius: 50%;
-}
 
-svg.arrow-svg:hover {
-    border-radius: 50%;
-    cursor: pointer;
-    background-color: var(--color-primary-light);
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-primary-light);
+    }
 }
 
 .pet-cart-container {
     display: flex;
 }
 
-.pet-cart:hover {
-    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
-    cursor: pointer;
-}
-
 .pet-cart {
     padding-right: 45px;
     padding-left: 45px;
+
+    &:hover {
+        box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+        cursor: pointer;
+    }
 }
 
 .pet-name {
@@ -268,21 +269,20 @@ svg.arrow-svg:hover {
 .learn-more-button {
     border-radius: 100px;
     width: 187px;
+    height: 53px;
     margin: 0 0 0 41px;
     background: none;
     border: var(--color-primary-light) solid 2px;
     transition: background-color 0.3s ease-in-out;
 
-    & p {
-        color: var(--color-dark-3xl);
-        font-family: var(--font-family);
-        font-size: 17px;
-        line-height: 90%;
-        letter-spacing: 0.06em;
-    }
+    color: var(--color-dark-3xl);
+    font-family: var(--font-family);
+    font-size: 17px;
+    line-height: 90%;
+    letter-spacing: 0.06em;
 
     &:hover {
-        background: var(--color-primary-light);
+        background-color: var(--color-primary-light);
         cursor: pointer;
     }
 }
@@ -295,14 +295,11 @@ svg.arrow-svg:hover {
     background: var(--color-primary);
     border: none;
     transition: background-color 0.3s ease-in-out;
-
     font-family: var(--font-family);
     font-size: 17px;
-    line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
     display: inline-block;
-    text-decoration: none;
     text-align: center;
     align-content: center;
 
@@ -364,13 +361,12 @@ svg.arrow-svg:hover {
 }
 
 .donation-container {
-    padding: 35px 182px 100px 257px;
+    padding: 35px 0 100px 0;
     display: flex;
 }
 
 .img-donation-dog {
-    padding-top: 56px;
-    padding-right: 30px;
+    padding: 56px 30px 0 183px;
 }
 
 .donation-header {
@@ -400,8 +396,13 @@ svg.arrow-svg:hover {
 .card-box {
     border-radius: 9px;
     padding: 10px 15px;
-    background: var(--color-primary);
+    background-color: var(--color-primary);
     display: flex;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: var(--color-primary-light);
+    }
 }
 
 .card-number {
@@ -461,6 +462,11 @@ svg.arrow-svg:hover {
     margin: 0;
     margin-left: 20px;
     margin-top: 5px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--color-primary-light);
+    }
 }
 
 .location-container {
@@ -497,9 +503,14 @@ svg.arrow-svg:hover {
     margin-left: 18px;
     margin-top: -6px;
     width: 254px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--color-primary-light);
+    }
 }
 
-.header-container.our-pets {
+.logo-container.our-pets {
     padding-right: 495px;
 }
 
@@ -517,9 +528,12 @@ svg.arrow-svg:hover {
     color: var(--color-dark-l);
     font-weight: normal;
     margin: 0;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--color-dark-3xl);
+    }
 }
-
-
 
 .subtitle-site.our-pets {
     color: var(--color-dark-3xl);
@@ -545,19 +559,17 @@ svg.arrow-svg:hover {
 
 .our-pets-main-content {
     background-color: var(--color-light-l);
-    padding-bottom: 101px;
+    padding-bottom: 103px;
 }
-
 
 .pet-cart-container.our-pets-page {
     display: flex;
     justify-content: center;
 }
 
-
 .pet-cart-container.our-pets-page {
     flex-wrap: wrap;
-    margin: 45px 0 0 0;
+    margin: 47px 0 0 0;
 }
 
 .pet-cart.our-pets-page {
@@ -613,11 +625,6 @@ svg.arrow-svg:hover {
         color: var(--color-dark-3xl);
         background: var(--color-primary);
         border: none;
-
-        &:hover {
-            background-color: var(--color-primary-light);
-            cursor: pointer;
-        }
     }
 
     &.next {
