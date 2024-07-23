@@ -21,7 +21,7 @@ body {
     margin: 0 auto;
 }
 
-header {
+.main-header {
     display: flex;
     justify-content: space-between;
     padding: 30px 40px 60px 40px;
@@ -511,17 +511,15 @@ svg.arrow-svg {
     }
 }
 
-.logo-container.our-pets {
-    padding-right: 495px;
-}
-
 .header-our-pets-page {
     background: var(--color-light-xl);
-    padding-bottom: 30px;
+    height: 121px;
 }
 
 .header-container-our-pets-page {
     display: flex;
+    justify-content: space-between;
+    padding: 30px 40px 60px 40px;
 }
 
 .title-site.our-pets {
@@ -560,7 +558,7 @@ svg.arrow-svg {
 
 .our-pets-main-content {
     background-color: var(--color-light-l);
-    padding-bottom: 103px;
+    height: 1341px;
 }
 
 .pet-cart-container.our-pets-page {
@@ -570,7 +568,7 @@ svg.arrow-svg {
 
 .pet-cart-container.our-pets-page {
     flex-wrap: wrap;
-    margin: 47px 0 0 0;
+    margin: 44px 0 0 0;
 }
 
 .pet-cart.our-pets-page {
@@ -597,6 +595,7 @@ svg.arrow-svg {
 
 .btn-container {
     display: flex;
+    margin: 48px 0 0 471px;
 }
 
 .btn-paginator {
@@ -615,7 +614,7 @@ svg.arrow-svg {
         font-family: var(--font-family);
         color: var(--color-dark-s);
         border: var(--color-dark-s) solid 2px;
-        
+
         &:hover {
             cursor: not-allowed;
         }
@@ -624,7 +623,7 @@ svg.arrow-svg {
     &.active {
         font-family: var(--font-family);
         color: var(--color-dark-3xl);
-        background: var(--color-primary);
+        background-color: var(--color-primary);
         border: none;
     }
 
@@ -632,6 +631,7 @@ svg.arrow-svg {
         font-family: var(--font-family);
         color: var(--color-dark-3xl);
         border: var(--color-primary) solid 2px;
+        transition: background-color 0.3s ease-in-out;
 
         &:hover {
             border: var(--color-primary-light) solid 2px;
@@ -641,6 +641,3 @@ svg.arrow-svg {
     }
 }
 
-.btn-container {
-    margin: 43px 0 0 471px;
-}
