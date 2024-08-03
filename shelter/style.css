@@ -1,3 +1,7 @@
+img {
+    width: 100%;
+}
+
 :root {
     scroll-behavior: smooth;
     --font-family: "Georgia", sans-serif;
@@ -27,10 +31,12 @@ body {
     padding: 30px 40px 60px 40px;
 }
 
+
 .wraper {
     max-width: 1280px;
     margin: 0 auto;
 }
+
 
 a {
     text-decoration: none;
@@ -641,3 +647,163 @@ svg.arrow-svg {
     }
 }
 
+@media (width <=768px) {
+    .start-page-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wraper {
+        max-width: 768px;
+    }
+
+    .main-header {
+        padding: 30px 30px 60px 30px;
+    }
+
+    .start-page-content-text-container {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 569px;
+        margin: 0 auto;
+    }
+
+    .btn-make-a-friend {
+        padding-left: 126px;
+    }
+
+    .content-img {
+        display: flex;
+        max-width: 569px;
+        margin: 100px 30px 0 auto;
+        padding: 0;
+        max-height: 593px;
+    }
+
+    .wraper.about {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .about-text-container {
+        margin: 0;
+    }
+
+    .about-img {
+        max-width: 300px;
+        max-height: 408px;
+        margin: 80px auto 0 auto;
+    }
+
+    .wraper.our-pets-main {
+        display: flex;
+        flex-direction: column;
+        height: 877px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 80px 0px 100px 4px;
+    }
+
+    .our-pets-header {
+        max-height: 90px;
+        padding: 0;
+    }
+
+    .btn-get-to-know {
+        max-height: 52px;
+        display: flex;
+        align-items: center;
+    }
+
+    .our-pets-button {
+        margin: auto;
+    }
+
+    .arrow {
+        padding: 0 12px 0 0;
+        display: flex;
+        align-items: center;
+
+        &.right {
+            padding: 0 0 0 12px;
+        }
+
+
+    }
+
+    .our-pets-img-container {
+        display: flex;
+        height: 435px;
+        width: 708px;
+        margin: 0 auto;
+    }
+
+    .pet-cart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 270px;
+        height: 435px;
+        padding: 0;
+        margin-left: -1px;
+        margin-right: 41px;
+    }
+
+    .pet-cart-container {
+        display: flex;
+        max-width: 580px;
+        overflow: hidden;
+    }
+
+    .learn-more-button {
+        margin: 0;
+    }
+
+    .pet-name {
+        margin: 30px 0 30px 0;
+    }
+
+    .help-header {
+        padding: 0;
+        margin: 80px auto 60px;
+    }
+
+    .help-icon-container {
+        width: 30%;
+        margin-right: 0;
+    }
+
+    .donation-container {
+        padding: 35px 0 73px 0;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .img-donation-dog {
+        padding: 60px 0 22px 0;
+        margin: 0 auto;
+    }
+
+    .donation-text-container {
+        margin: 0 auto;
+    }
+
+    .location-container {
+        margin: 0;
+        padding: 15px 0px 0 60px;
+    }
+
+    .contacts-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px 0px 0 65px;
+    }
+
+    .donation-dog-img {
+        max-width: 300px;
+        max-height: 310px;
+        padding: 65px 0 0 170px;
+    }
+}
