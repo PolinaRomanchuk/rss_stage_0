@@ -814,6 +814,69 @@ svg.arrow-svg {
         max-height: 310px;
         padding: 65px 0 0 170px;
     }
+
+    .our-pets-header.our-pets-page {
+        padding: 80px 0 0 0;
+    }
+
+    .header-container-our-pets-page {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        margin: auto;
+        height: 60px;
+        width: 708px;
+        align-content: flex-end;
+        align-items: stretch;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-top: 30px;
+    }
+
+    .pet-cart-container.our-pets-page {
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 618px;
+        height: 1365px;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .pet-cart.our-pets-page {
+        padding: 0;
+        line-height: 128%;
+        width: 270px;
+        height: 435px;
+        margin: auto;
+        margin-top: 30px;
+
+    }
+
+    .our-pets-main-content {
+        background-color: var(--color-light-l);
+        height: 1732px;
+    }
+
+    .btn-container.our-pets-page {
+        width: 340px;
+        height: 52px;
+        margin: 0 auto;
+        margin-top: 68px;
+        justify-content: space-between;
+
+        & .btn-paginator {
+
+            margin-right: 0;
+
+        }
+    }
+
+    .pet-name {
+        &.woody {
+            margin-left: 0;
+        }
+    }
 }
 
 @media screen and (max-width:320px) {
