@@ -2,6 +2,20 @@ img {
     width: 100%;
 }
 
+body {
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2,
+h1 {
+    font-weight: normal;
+    margin: 0;
+}
+
 :root {
     scroll-behavior: smooth;
     --font-family: "Georgia", sans-serif;
@@ -19,46 +33,50 @@ img {
     --color-primary: #f1cdb3;
     --color-primary-light: #fddcc4;
     --gradient-background: #211f20;
-}
 
-body {
-    margin: 0 auto;
-}
 
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 40px 60px 40px;
-}
 
+}
 
 .wraper {
     max-width: 1280px;
     margin: 0 auto;
 }
 
-
-a {
-    text-decoration: none;
-}
-
-h2,
-h1 {
-    font-weight: normal;
-    margin: 0;
-}
-
+/*main start page + header */
+/* -----------------------------------------------------------------------------------------------------*/
 .start-page {
+    height: 908px;
+
     background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
     background-size: cover;
     background-size: 100%;
 }
 
-.logo-container {
-    height: 60px;
+.header_container_start-page {
+    height: 120px;
+
+    margin: auto;
+    display: flex;
 }
 
-.title-site {
+.header_content_start-page {
+    width: 1200px;
+    height: 60px;
+
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo_title {
     font-family: var(--font-family);
     font-size: 32px;
     line-height: 111%;
@@ -71,27 +89,25 @@ h1 {
     }
 }
 
-.subtitle-site {
-    padding-top: 10px;
-    padding-left: 4px;
+.logo_subtitle {
     font-family: var(--second-family);
     font-size: 13px;
     letter-spacing: 0.1em;
     color: var(--color-light-xl);
 }
 
-.burger-menu {
-    display: none;
-    overflow: hidden;
+nav.navigation_container {
+    width: 443px;
 }
 
-.navigation-list {
+.navigation_list {
     display: flex;
     list-style: none;
+    justify-content: space-between;
+    padding: 0;
 }
 
-.navigation-link {
-    padding-left: 36px;
+.navigation_link {
     text-decoration: none;
     font-family: var(--second-family);
     font-size: 15px;
@@ -111,20 +127,31 @@ h1 {
     }
 }
 
-.start-page-container {
+.burger-menu {
+    display: none;
+    overflow: hidden;
+}
+
+/*-------------------------------header-end------------------------------------*/
+
+.start-page_container {
+    width: 1200px;
+    height: 788px;
+
     display: flex;
     justify-content: space-between;
+    margin: auto;
 }
 
-.start-page-content-text-container {
-    padding-top: 194px;
-    padding-left: 40px;
+.start-page_content-text_container {
+    width: 460px;
+    height: 340px;
+    margin: auto auto auto 0;
 }
 
-.start-page-content-text-header {
+.start-page_content-text_title {
     width: 310px;
     padding-bottom: 42px;
-    margin: 0;
     font-family: var(--font-family);
     font-size: 44px;
     line-height: 130%;
@@ -132,22 +159,21 @@ h1 {
     font-weight: normal;
 }
 
-.start-page-content-text-desc {
+.start-page_content-text_subtitle {
     width: 460px;
-    margin-bottom: 42px;
+    padding-bottom: 42px;
     font-family: var(--second-family);
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-s);
 }
 
-.start-page-button-go-to-pets {
-    border-radius: 100px;
+.start-page_button-go-to-pets {
     width: 207px;
     height: 52px;
+    border-radius: 100px;
     background-color: var(--color-primary);
     border: none;
-    transition: background-color 0.3s ease-in-out;
     display: inline-block;
     text-align: center;
     align-content: center;
@@ -155,6 +181,7 @@ h1 {
     font-size: 17px;
     letter-spacing: 0.06em;
     color: var(--color-dark-3xl);
+    transition: background-color 0.3s ease-in-out;
 
     &:hover {
         cursor: pointer;
@@ -162,32 +189,53 @@ h1 {
     }
 }
 
-.content-img {
+.start-page_img_container {
     height: 728px;
-    padding-right: 40px;
-    padding-top: 30px;
+    width: 698px;
+
+    margin: auto 0 0;
 
     &img {
         width: 100%;
     }
 }
 
-.about-container {
-    display: flex;
+/*-------------------------------------start-page-end-----------------------------------------------------------------*/
+
+.about-page {
+    height: 588px;
     background: var(--color-light-xl);
-    padding: 80px 40px 100px 40px;
+
+    & .wraper {
+        height: 588px;
+        display: flex;
+    }
 }
 
-.wraper.about {
+.about-page_img_container {
+    margin-top: -10px;
+}
+
+.about-page_container {
+    width: 1090px;
+    height: 408px;
     display: flex;
+    margin: auto;
+    justify-content: space-evenly;
 }
 
-.about-text-container {
-    margin: 14px 0 0 120px;
+.about-page_content_container {
+    width: 430px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 4px;
 }
 
-.about-header-text {
-    padding: 0 60px 25px 0;
+.about-page_content_title {
+    width: 370px;
+    height: 90px;
     font-family: var(--font-family);
     font-size: 35px;
     line-height: 130%;
@@ -195,22 +243,32 @@ h1 {
     color: var(--color-dark-l);
 }
 
-.about-text-part-one {
+.about-page_content_subtitle_part-one {
     width: 430px;
+    height: 96px;
     font-family: var(--second-family);
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-xl);
 }
 
-.about-text-part-two {
+.about-page_content_subtitle_part-two {
     width: 430px;
-    margin-top: 25px;
+    height: 144px;
     font-family: var(--second-family);
     font-size: 15px;
     line-height: 160%;
     color: var(--color-dark-xl);
 }
+
+/* ------------------------------------------------ */
+
+
+
+
+
+
+
 
 .our-pets-container {
     height: 877px;
