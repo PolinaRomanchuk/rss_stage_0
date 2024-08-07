@@ -340,6 +340,11 @@ svg.slider-arrow-svg {
     &:hover {
         box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
         cursor: pointer;
+
+        & .pet-cart-button {
+            background-color: var(--color-primary-light);
+            cursor: pointer;
+        }
     }
 }
 
@@ -405,14 +410,29 @@ svg.slider-arrow-svg {
 /* ------------------------------------------------------------------------------*/
 
 
-.help-container {
+.help-page {
+    height: 611px;
     background: var(--color-light-xl);
-    padding-bottom: 44px;
+
+    & .wraper {
+        height: 611px;
+        display: flex;
+    }
 }
 
-.help-header {
+.help-page_container {
+    width: 1200px;
+    height: 450px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help-page_header {
     width: 310px;
-    padding: 76px 0 60px 486px;
+    height: 90px;
+
     text-align: center;
     font-family: var(--font-family);
     font-size: 35px;
@@ -421,18 +441,21 @@ svg.slider-arrow-svg {
     color: var(--color-dark-l);
 }
 
-.help-icons-container {
+.help-page_icons-container {
+    height: 240px;
+    display: flex;
+    margin: auto;
+}
+
+.help-page_icons-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
-.wraper.help {
-    max-width: 1200px;
-}
-
-.help-icon-container {
+.help-page_icon-item {
     margin-right: 120px;
     margin-bottom: 55px;
     text-align: center;
@@ -451,6 +474,8 @@ svg.slider-arrow-svg {
     color: var(--color-dark-l);
     padding-top: 26px;
 }
+
+/*-------------------------------------------------------*/
 
 .donation {
     background: var(--color-light-l);
