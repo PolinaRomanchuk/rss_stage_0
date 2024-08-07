@@ -477,31 +477,39 @@ svg.slider-arrow-svg {
 
 /*-------------------------------------------------------*/
 
-.donation {
+.donation-page {
+    height: 462px;
     background: var(--color-light-l);
+
+    & .wraper {
+        height: 462px;
+        display: flex;
+    }
 }
 
-.donation-container {
-    padding: 35px 0 100px 0;
+.donation-page_container {
     display: flex;
+    width: 915px;
+    height: 288px;
+    margin: auto;
+    justify-content: space-between;
 }
 
-.img-donation-dog {
-    padding: 56px 30px 0 183px;
+.donation-page_text_container {
+    display: flex;
+    flex-direction: column;
 }
 
-.donation-header {
-    padding-top: 44px;
+.donation-page_header {
     width: 300px;
     font-family: var(--font-family);
     font-size: 35px;
-    line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-dark-l);
 }
 
-.donation-info-bank {
-    padding-top: 20px;
+.donation-page_info-bank {
+    padding-top: 24px;
     font-family: var(--font-family);
     font-size: 15px;
     line-height: 110%;
@@ -509,7 +517,7 @@ svg.slider-arrow-svg {
     color: var(--color-dark-l);
 }
 
-.donation-credit-cart-container {
+.donation-page_credit-card_container {
     display: flex;
     padding-top: 20px;
 }
@@ -535,7 +543,7 @@ svg.slider-arrow-svg {
     padding-left: 15px;
 }
 
-.donation-subtitle {
+.donation-page_subtitle {
     font-family: var(--second-family);
     font-style: italic;
     font-size: 12px;
@@ -545,31 +553,49 @@ svg.slider-arrow-svg {
     width: 380px;
 }
 
-#contacts {
+/* ---------------------------------------------------------------------------------------*/
+
+#contacts-page {
+    height: 350px;
     background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
     background-size: cover;
     background-size: 100%;
+
+    & .wraper {
+        height: 350px;
+        display: flex;
+    }
 }
 
-.contacts-container {
+.contacts-page_container {
+    width: 1200px;
+    height: 310px;
+    margin: auto auto 0 auto;
     display: flex;
-    padding: 40px 0px 0 80px;
+    justify-content: space-between;
 }
 
-.contacts-header {
+.contacts-page_contacts_container {
+    width: 278px;
+    height: 269px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.contacts_header {
     font-family: var(--font-family);
     font-size: 35px;
-    line-height: 130%;
+    line-height: 123%;
     letter-spacing: 0.06em;
     color: var(--color-light-xl);
     width: 279px;
-    padding-top: 16px;
 }
 
 .contacts-email,
 .contacts-phone {
     display: flex;
-    padding-top: 40px;
 }
 
 .email,
@@ -590,31 +616,32 @@ svg.slider-arrow-svg {
     }
 }
 
-.location-container {
-    margin-left: 161px;
-    margin-top: 16px;
-    margin-right: 166px;
+.contacts-page_location_container {
+    width: 302px;
+    height: 269px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .location-header {
+    width: 270px;
+    height: 90px;
     font-family: var(--font-family);
     font-size: 35px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: var(--color-light-xl);
-    width: 270px;
 }
 
 .location {
     display: flex;
-    margin-top: 40px;
-}
-
-.london {
-    margin-top: -10px;
 }
 
 .location-text {
+    width: 254px;
     font-family: var(--font-family);
     font-size: 20px;
     line-height: 115%;
@@ -622,8 +649,6 @@ svg.slider-arrow-svg {
     color: var(--color-primary);
     margin: 0;
     margin-left: 18px;
-    margin-top: -6px;
-    width: 254px;
     transition: color 0.3s ease-in-out;
 
     &:hover {
@@ -631,6 +656,9 @@ svg.slider-arrow-svg {
     }
 }
 
+
+
+/*-------------------------------------------------------------------------------------------------------*/
 .header-our-pets-page {
     background: var(--color-light-xl);
     height: 121px;
