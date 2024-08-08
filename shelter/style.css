@@ -61,8 +61,8 @@ h1 {
 }
 
 .header_content_start-page {
-    width: 1200px;
-    height: 60px;
+    width: 93.5%;
+    height: 50%;
 
     margin: auto;
     display: flex;
@@ -135,7 +135,7 @@ nav.navigation_container {
 /*-------------------------------header-end------------------------------------*/
 
 .start-page_container {
-    width: 1200px;
+    width: 93.5%;
     height: 788px;
 
     display: flex;
@@ -658,7 +658,12 @@ svg.slider-arrow-svg {
 
 
 
-/*-------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+/*-----------------------------------------our-pets --------------------------------------------------------------*/
 .header-our-pets-page {
     background: var(--color-light-xl);
     height: 121px;
@@ -791,162 +796,220 @@ svg.slider-arrow-svg {
 
 
 @media screen and (max-width: 768px) {
-    .start-page-container {
-        display: flex;
-        flex-direction: column;
-    }
-
     .wraper {
         max-width: 768px;
     }
 
-    .main-header {
-        padding: 30px 30px 60px 30px;
-    }
+    .start-page {
+        height: 1165px;
+        background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 200%), var(--gradient-background);
+        background-size: cover;
+        background-size: 214%;
 
-    .start-page-content-text-container {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        max-width: 569px;
-        margin: 0 auto;
-    }
-
-    .btn-make-a-friend {
-        padding-left: 126px;
-    }
-
-    .content-img {
-        display: flex;
-        max-width: 569px;
-        margin: 100px 30px 0 auto;
-        padding: 0;
-        max-height: 593px;
-    }
-
-    .wraper.about {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .about-text-container {
-        margin: 0;
-    }
-
-    .about-img {
-        max-width: 300px;
-        max-height: 408px;
-        margin: 80px auto 0 auto;
-    }
-
-    .wraper.our-pets-main {
-        display: flex;
-        flex-direction: column;
-        height: 877px;
-        justify-content: space-between;
-        box-sizing: border-box;
-        padding: 80px 0px 100px 4px;
-    }
-
-    .our-pets-header {
-        max-height: 90px;
-        padding: 0;
-    }
-
-    .btn-get-to-know {
-        max-height: 52px;
-        display: flex;
-        align-items: center;
-    }
-
-    .our-pets-button {
-        margin: auto;
-    }
-
-    .arrow {
-        padding: 0 12px 0 0;
-        display: flex;
-        align-items: center;
-
-        &.right {
-            padding: 0 0 0 12px;
+        & .wraper {
+            display: flex;
+            flex-direction: column;
         }
     }
 
-    .our-pets-img-container {
-        display: flex;
-        height: 435px;
-        width: 708px;
-        margin: 0 auto;
-    }
-
-    .pet-cart {
+    .start-page_container {
+        width: 569px;
+        height: 1045px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        min-width: 270px;
-        height: 435px;
-        padding: 0;
-        margin-left: -1px;
-        margin-right: 41px;
+        margin: auto auto 0 auto;
     }
 
-    .pet-cart-container {
+    .header_content_start-page {
+        width: 708px;
+    }
+
+
+    .start-page_content-text_container {
+        height: 322px;
         display: flex;
-        max-width: 580px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+    .start-page_button_container {
+        padding-left: 126px;
+    }
+
+    .start-page_img_container {
+        display: flex;
+        width: 569px;
+        height: 593px;
+        margin-left: 70px;
+    }
+
+    /*-----------------------------------------------------------*/
+    .about-page {
+        height: 1048px;
+
+        & .wraper {
+            height: 1048px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+    }
+
+    .about-page_container {
+        width: 429px;
+        height: 898px;
+    }
+
+    .about-page_img_container {
+        max-width: 300px;
+        max-height: 408px;
+    }
+
+    /*-----------------------------------------------------------*/
+
+    .pets-page_container {
+        width: 708px;
+        height: 712px;
+    }
+
+    .pets-page_content_header_container {
+        height: 74px;
+    }
+
+    .pets-page_content_header {
+        line-height: 45.5px;
+    }
+
+    .pets-page_slider_container {
+        height: 410px;
+        margin: auto;
+    }
+
+    .pets-page_pet-cart {
+        padding-right: 17px;
+        padding-left: 17px;
+    }
+
+    .pets-page_pet-carts_container {
         overflow: hidden;
     }
 
-    .learn-more-button {
+    .pet-cart-photo {
+        width: 270px;
+        height: 270px;
+    }
+
+    .slider-arrow {
+        margin-top: 188px;
+    }
+
+    /*--------------------------------------------------------------------------*/
+
+    .help-page {
+        height: 779px;
+
+        & .wraper {
+            height: 779px;
+        }
+    }
+
+    .help-page_container {
+        width: 630px;
+        height: 618px;
+        justify-content: space-between;
+    }
+
+    .help-page_icons-container {
+        height: 469px;
         margin: 0;
     }
 
-    .pet-name {
-        margin: 30px 0 30px 0;
-    }
-
-    .help-header {
-        padding: 0;
-        margin: 80px auto 60px;
-    }
-
-    .help-icon-container {
-        width: 30%;
-        margin-right: 0;
-    }
-
-    .donation-container {
-        padding: 35px 0 73px 0;
+    .help-page_icons-content {
+        height: 451px;
         display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+
+    .help-page_icon-item {
+        width: 170px;
+        height: 113px;
+        margin: 0;
+    }
+
+    .help-page_icons-container {
+        margin: 0;
+    }
+
+    /* ------------------------------------------------*/
+
+    .donation-page {
+        height: 783px;
+
+        & .wraper {
+            height: 783px;
+        }
+    }
+
+
+    .donation-page_container {
+        width: 380px;
+        height: 610px;
+        margin: auto;
+        justify-content: space-between;
         flex-direction: column-reverse;
     }
 
-    .img-donation-dog {
-        padding: 60px 0 22px 0;
-        margin: 0 auto;
+    .donation-page_img {
+        width: 505px;
+        height: 274px;
+        margin-left: -63px;
     }
 
-    .donation-text-container {
-        margin: 0 auto;
+    /*------------------------------------------*/
+    #contacts-page {
+        height: 639px;
+        background: url("./assets/img/start-screen-gradient-background.png"), radial-gradient(237.5% 111.8% at 0% 0%, rgb(91, 72, 58) 0%, rgb(38, 36, 37) 100%), var(--gradient-background);
+        background-size: cover;
+
+        & .wraper {
+            height: 639px;
+        }
     }
 
-    .location-container {
-        margin: 0;
-        padding: 15px 0px 0 60px;
-    }
-
-    .contacts-container {
-        display: flex;
+    .contacts-page_container {
+        width: 708px;
+        height: 637px;
         flex-wrap: wrap;
-        padding: 15px 0px 0 65px;
+        margin: auto;
+        justify-content: space-around;
+        align-content: space-between;
     }
 
-    .donation-dog-img {
-        max-width: 300px;
-        max-height: 310px;
-        padding: 65px 0 0 170px;
+    .contacts-page_img {
+        width: 300px;
+        height: 310px;
+        margin: 0;
     }
+
+    .contacts-page_location_container,
+    .contacts-page_contacts_container {
+        height: 298px;
+        justify-content: space-evenly;
+    }
+
+    .contacts_header {
+        line-height: normal;
+        margin-top: -7px;
+    }
+
+
+    /* ----------------------------------------------------------*/
+
 
     .our-pets-header.our-pets-page {
         padding: 80px 0 0 0;
@@ -1015,18 +1078,29 @@ svg.slider-arrow-svg {
 
     .start-page {
         height: 823px;
+
+        & .wraper {
+            height: 823px;
+        }
     }
 
-    .main-header {
-        max-width: 280px;
-        margin: 0 auto;
-        padding: 30px 0 30px 0;
+    .header_container_start-page {
+        height: 120px;
+        width: 280px;
+        margin: auto;
+        display: flex;
     }
 
-    .navigation-container {
+    .header_content_start-page {
+        width: 708px;
+        height: 50%;
+    }
+
+    .navigation_container {
         display: none;
         overflow: hidden;
     }
+
 
     .burger-menu {
         display: flex;
@@ -1045,11 +1119,51 @@ svg.slider-arrow-svg {
         height: 0px;
     }
 
-    .start-page-container {
-        max-width: 300px;
-        min-height: 703px;
+    /* -----------------------------------------------------------------------------*/
+
+    .start-page_container {
+        width: 300px;
+        height: 703px;
         margin: auto;
+        align-items: center;
     }
+
+    .start-page_content-text_container {
+        width: 300px;
+        height: 300px;
+        
+        align-items: center;
+    }
+
+    .start-page_content-text_title {
+        width: 300px;
+        height: 64px;
+        font-size: 25px;
+    }
+
+    .start-page_content-text_subtitle {
+        width: 300px;
+        height: 96px;
+    }
+
+    .start-page_button_container {
+        padding-left: 0;
+    }
+
+
+    .start-page_img_container {
+        width: 260px;
+        height: 271.77px;
+    }
+
+
+
+    /*-----------------------------------------------------------------------------*/
+
+
+
+
+
 
     .start-page-content-text-container {
         max-width: 300px;
