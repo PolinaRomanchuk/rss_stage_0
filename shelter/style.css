@@ -664,22 +664,12 @@ svg.slider-arrow-svg {
 
 
 /*-----------------------------------------our-pets --------------------------------------------------------------*/
-.header-our-pets-page {
+.header_container_start-page.our-pets-page {
     background: var(--color-light-xl);
-    height: 121px;
 }
 
-.header-container-our-pets-page {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 40px 60px 40px;
-}
-
-.title-site.our-pets {
-    line-height: 110%;
+.logo_title.our-pets-page {
     color: var(--color-dark-l);
-    font-weight: normal;
-    margin: 0;
     transition: color 0.3s ease-in-out;
 
     &:hover {
@@ -687,11 +677,11 @@ svg.slider-arrow-svg {
     }
 }
 
-.subtitle-site.our-pets {
+.logo_subtitle.our-pets-page {
     color: var(--color-dark-3xl);
 }
 
-.navigation-link.our-pets {
+.navigation_link.our-pets-page {
     color: var(--color-dark-l);
 
     &:hover {
@@ -699,56 +689,43 @@ svg.slider-arrow-svg {
     }
 }
 
-.navigation-link.our-pets.active {
+.navigation_link.our-pets-page.active {
     color: var(--color-dark-3xl);
     text-decoration: underline solid var(--color-primary) 3px;
     text-underline-offset: 7px;
 }
 
-.our-pets-header.our-pets-page {
-    padding: 80px 0 0 0;
-}
-
-.our-pets-main-content {
-    background-color: var(--color-light-l);
+.pets-page.our-pets-page {
     height: 1341px;
-}
 
-.pet-cart-container.our-pets-page {
-    display: flex;
-    justify-content: center;
-}
-
-.pet-cart-container.our-pets-page {
-    flex-wrap: wrap;
-    margin: 44px 0 0 0;
-}
-
-.pet-cart.our-pets-page {
-    padding: 14px 20px 44px 20px;
-    line-height: 128%;
-}
-
-.learn-more-button.our-pets-page {
-    background: var(--color-light-s);
-    border: solid var(--color-primary) 2px;
-    margin: 0 43px 0 40px;
-    transition: background-color 0.3s ease-in-out;
-
-    &:hover {
-        cursor: pointer;
-        background: var(--color-primary-light);
-        border: solid var(--color-primary-light) 2px;
+    & .wraper {
+        height: 1341px;
     }
 }
 
-.pet-cart:last-child {
-    width: auto;
+
+.pets-page_container.our-pets-page {
+    width: 1200px;
+    height: 1182px;
+}
+
+
+.pets-page_pet-carts_container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 930px;
+
+}
+
+.pets-page_pet-cart {
+    padding: 0;
+    width: 270px;
+    height: 435px;
 }
 
 .btn-container {
     display: flex;
-    margin: 48px 0 0 471px;
+    margin: 0;
 }
 
 .btn-paginator {
@@ -1010,47 +987,23 @@ svg.slider-arrow-svg {
 
     /* ----------------------------------------------------------*/
 
+    .pets-page.our-pets-page {
+        height: 1733px;
 
-    .our-pets-header.our-pets-page {
-        padding: 80px 0 0 0;
+        & .wraper {
+            height: 1733px;
+        }
     }
 
-    .header-container-our-pets-page {
-        display: flex;
-        justify-content: flex-start;
-        padding: 0;
-        margin: auto;
-        height: 60px;
+    .pets-page_container.our-pets-page {
         width: 708px;
-        align-content: flex-end;
-        align-items: stretch;
-        flex-wrap: wrap;
-        flex-direction: row;
-        padding-top: 30px;
+        height: 1573px;
     }
 
-    .pet-cart-container.our-pets-page {
-        flex-wrap: wrap;
-        margin: 0 auto;
-        max-width: 618px;
-        height: 1365px;
-        display: flex;
-        justify-content: space-around;
+    .pets-page_pet-carts_container {
+        height: 1285px;
     }
 
-    .pet-cart.our-pets-page {
-        padding: 0;
-        line-height: 128%;
-        width: 270px;
-        height: 435px;
-        margin: auto;
-        margin-top: 30px;
-    }
-
-    .our-pets-main-content {
-        background-color: var(--color-light-l);
-        height: 1732px;
-    }
 
     .btn-container.our-pets-page {
         width: 340px;
@@ -1464,7 +1417,6 @@ svg.slider-arrow-svg {
         align-items: flex-end;
     }
 
-
     .contacts-page_location_container,
     .contacts-page_contacts_container {
         height: 245px;
@@ -1489,40 +1441,29 @@ svg.slider-arrow-svg {
     }
 
     /*---------------------------------------------*/
-    .header-container-our-pets-page {
-        width: 280px;
-        height: 60px;
-        justify-content: space-between;
+
+    .pets-page.our-pets-page {
+        height: 1649px;
+
+        & .wraper {
+            height: 1649px;
+        }
     }
 
-    .our-pets-header.our-pets-page {
-        padding: 40px 0 0 0;
+    .pets-page_container.our-pets-page {
+        width: 300px;
+        height: 1605px;
     }
 
-    .pet-cart.our-pets-page {
-        margin-top: 42px;
-    }
-
-    .pet-cart.our-pets-page {
-        padding: 0;
-        line-height: 128%;
-        width: 270px;
-        height: 423px;
+    .pets-page_pet-carts_container {
         margin: auto;
-        margin-top: 42px;
-    }
-
-    .pet-name.woody {
-        margin: 31px;
+        overflow: hidden;
+         order: unset; 
     }
 
     .btn-container.our-pets-page {
         width: 297px;
         margin-top: 83px;
     }
-
-    .our-pets-main-content {
-        background-color: var(--color-light-l);
-        height: 1648px;
-    }
+   
 }
