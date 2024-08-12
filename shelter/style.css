@@ -1164,6 +1164,30 @@ svg.slider-arrow-svg {
         }
     }
 }
+@media screen and (max-width: 767px)
+{
+    .navigation_container {
+        display: none;
+        overflow: hidden;
+    }
+
+    .burger-menu {
+        display: flex;
+        overflow: visible;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+        align-items: center;
+        margin: auto 0;
+    }
+
+    .line-burger-menu {
+        border: 2px solid var(--color-primary);
+        width: 30px;
+        height: 0px;
+    }
+}
 
 @media screen and (max-width:738px) {
 
