@@ -49,6 +49,10 @@ h1 {
     background-size: cover;
 }
 
+#about {
+    position: relative;
+}
+
 .header_container_start-page {
     height: 120px;
 
@@ -124,6 +128,11 @@ nav.navigation_container {
 }
 
 .burger-menu {
+    display: none;
+    overflow: hidden;
+}
+
+.mobile-menu {
     display: none;
     overflow: hidden;
 }
@@ -325,7 +334,7 @@ nav.navigation_container {
     }
 }
 
-svg.slider-arrow-svg {
+.slider-arrow svg {
     border-radius: 50%;
     transition: background-color 0.3s ease-in-out;
 
@@ -1164,8 +1173,8 @@ svg.slider-arrow-svg {
         }
     }
 }
-@media screen and (max-width: 767px)
-{
+
+@media screen and (max-width: 767px) {
     .navigation_container {
         display: none;
         overflow: hidden;
@@ -1180,14 +1189,76 @@ svg.slider-arrow-svg {
         height: 22px;
         align-items: center;
         margin: auto 0;
+        z-index: 100;
+
+        &.clicked {
+            transform: rotate(90deg)
+        }
     }
 
     .line-burger-menu {
         border: 2px solid var(--color-primary);
         width: 30px;
         height: 0px;
+
+        &.our-pets-page {
+            border: 2px solid black;
+        }
+    }
+
+    .mobile-menu.clicked {
+        overflow: visible;
+        display: flex;
+        width: 320px;
+        height: 100%;
+        background: var(--color-dark-3xl);
+        position: absolute;
+        right: 0;
+    }
+
+    .mobile-menu_container {
+        overflow: visible;
+        display: flex;
+        width: 320px;
+        height: 100%;
+
+    }
+
+    .mobile-menu_navigation_list {
+        width: 243px;
+        height: 327px;
+        margin: auto;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 }
+
+.mobile-menu_navigation_link {
+    font-size: 32px;
+    text-decoration: none;
+    line-height: 160%;
+    color: var(--color-dark-s);
+    font-family: var(--second-family);
+    padding: 0;
+    transition: color 0.3s ease-in-out;
+
+    &.active {
+        color: var(--color-light-s);
+        text-decoration: underline solid var(--color-primary) 3px;
+        text-underline-offset: 7px;
+        cursor: default;
+    }
+
+    &:hover {
+        color: var(--color-light-s);
+    }
+}
+
+
 
 @media screen and (max-width:738px) {
 

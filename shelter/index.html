@@ -28,14 +28,23 @@
                             <li> <a href="#contacts" class="navigation_link">Contacts</a> </li>
                         </ul>
                     </nav>
-                    <div class="burger-menu">
+                    <div class="burger-menu" onclick="rotateIcon ()">
                         <div class="line-burger-menu"></div>
                         <div class="line-burger-menu"></div>
                         <div class="line-burger-menu"></div>
                     </div>
                 </div>
             </header>
-
+            <div class="mobile-menu">
+                <nav class="mobile-menu_container">
+                    <ul class="mobile-menu_navigation_list">
+                        <li> <a class="mobile-menu_navigation_link active">About the shelter</a> </li>
+                        <li> <a href="pets.html" class="mobile-menu_navigation_link">Our pets</a> </li>
+                        <li> <a href="#help" class="mobile-menu_navigation_link">Help the shelter</a> </li>
+                        <li> <a href="#contacts" class="mobile-menu_navigation_link">Contacts</a> </li>
+                    </ul>
+                </nav>
+            </div>
             <div class="start-page_container">
                 <div class="start-page_content-text_container">
                     <div class="start-page_content-text_title_wraper">
@@ -456,6 +465,7 @@
             </div>
         </section>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
