@@ -4,6 +4,10 @@ img {
 
 body {
     margin: 0 auto;
+
+    &.clicked {
+        overflow-y: hidden;
+    }
 }
 
 a {
@@ -130,11 +134,20 @@ nav.navigation_container {
 .burger-menu {
     display: none;
     overflow: hidden;
+    transition: 0.3s all linear;
 }
 
 .mobile-menu {
-    display: none;
     overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    transform: translateX(100%);
+    transition: transform 0.3s linear, background-color 0s linear 0.3s;
 }
 
 /*-------header-end------------------------------------------------------------------------------------------------*/
@@ -1208,12 +1221,8 @@ nav.navigation_container {
 
     .mobile-menu.clicked {
         overflow: visible;
-        display: flex;
-        width: 320px;
-        height: 100%;
-        background: var(--color-dark-3xl);
-        position: absolute;
-        right: 0;
+        background: rgba(40, 40, 40, 0.5);
+        transform: translateX(0%);
     }
 
     .mobile-menu_container {
@@ -1221,7 +1230,7 @@ nav.navigation_container {
         display: flex;
         width: 320px;
         height: 100%;
-
+        background: var(--color-dark-3xl);
     }
 
     .mobile-menu_navigation_list {
@@ -1253,7 +1262,7 @@ nav.navigation_container {
         cursor: default;
     }
 
-    &:hover {
+    &:hover:active{
         color: var(--color-light-s);
     }
 }
