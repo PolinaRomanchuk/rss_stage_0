@@ -143,11 +143,16 @@ nav.navigation_container {
     height: 100%;
     position: absolute;
     top: 0;
+    z-index: 10;
 
     display: flex;
     justify-content: flex-end;
     transform: translateX(100%);
     transition: transform 0.3s linear, background-color 0s linear 0.3s;
+}
+
+.mobile-menu_container {
+    overflow: hidden;
 }
 
 /*-------header-end------------------------------------------------------------------------------------------------*/
@@ -296,6 +301,7 @@ nav.navigation_container {
     & .wraper {
         height: 877px;
         display: flex;
+        position: relative;
     }
 }
 
@@ -434,6 +440,128 @@ nav.navigation_container {
     &:hover {
         cursor: pointer;
         background-color: var(--color-primary-light);
+    }
+}
+
+.modal-window {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.modal-window.clicked {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: rgba(40, 40, 40, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+}
+
+.modal-window_content {
+    width: 900px;
+    height: 500px;
+    border-radius: 9px;
+    background-color: #f6f6f6;
+    display: flex;
+    position: relative;
+
+}
+
+.modal-window-photo_container {
+    min-width: 500px;
+    height: 500px;
+
+    & img {
+        border-radius: 9px 0 0 9px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.modal-window_text_container {
+    width: 340px;
+    height: 398px;
+    margin: auto;
+}
+
+.modal-window_pet-name {
+    font-family: var(--font-family);
+    font-size: 35px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.modal-window_animal {
+    font-family: var(--font-family);
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #000;
+    margin-bottom: 38px;
+}
+
+.modal-window_description {
+    font-family: var(--font-family);
+    font-size: 15px;
+    line-height: 114%;
+    letter-spacing: 0.06em;
+    color: #000;
+    width: 350px;
+    margin-bottom: 40px;
+}
+
+.modal-list {
+    font-family: var(--font-family);
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000;
+    padding-left: 15px;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    ::marker {
+        border-radius: 100%;
+        color: var(--color-primary);
+    }
+}
+
+.modal-window_close {
+    position: absolute;
+    right: -42px;
+    top: -52px;
+
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    box-sizing: border-box;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        width: auto;
+        display: block;
+    }
+
+    &:hover {
+        transform: rotate(-180deg);
+        background-color: #fddcc4;
+        transition: all 1s;
+        cursor: pointer;
     }
 }
 
@@ -725,6 +853,10 @@ nav.navigation_container {
 }
 
 /*----------------------------------------------------------pets page our pets----------------------------------*/
+.our-pets-page-wraper {
+    position: relative;
+}
+
 .pets-page.our-pets-page {
     height: 1341px;
 
@@ -885,6 +1017,41 @@ nav.navigation_container {
 
     .help-page_icons-container {
         margin: 0;
+    }
+
+    .modal-window_content {
+        width: 630px;
+        height: 350px;
+    }
+
+    .modal-window-photo_container {
+        min-width: 350px;
+        height: 350px;
+    }
+
+    .modal-window_text_container {
+        width: 260px;
+        height: 328px;
+    }
+
+    .modal-window_animal {
+        margin-bottom: 20px;
+    }
+
+    .modal-window_description {
+        width: 265px;
+        height: 98px;
+        font-size: 13px;
+        line-height: 110%;
+        color: #000;
+
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .modal-list {
+
+        justify-content: space-evenly;
     }
 }
 
@@ -1052,6 +1219,7 @@ nav.navigation_container {
     .slider-arrow {
         margin-top: 188px;
     }
+
 
     /*--------------------------help page----------------------------------*/
     .help-page {
@@ -1262,11 +1430,10 @@ nav.navigation_container {
         cursor: default;
     }
 
-    &:hover:active{
+    &:hover:active {
         color: var(--color-light-s);
     }
 }
-
 
 
 @media screen and (max-width:738px) {
@@ -1293,6 +1460,49 @@ nav.navigation_container {
 
     .pets-page_pet-cart {
         padding: 0;
+    }
+
+    .modal-window_content {
+        width: 240px;
+        height: 341px;
+    }
+
+    .modal-window-photo_container {
+        width: 0;
+        height: 0;
+        display: none;
+        overflow: hidden;
+    }
+
+    .modal-window_close {
+        right: -30px;
+    }
+
+    .modal-window_text_container {
+        width: 220px;
+        height: 321px;
+    }
+
+    .modal-window_pet-name {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-window_description {
+        width: 220px;
+        height: 112px;
+        text-align: justify;
+    }
+
+    .modal-window_animal {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        line-height: normal;
+    }
+
+    .modal-list {
+        justify-content: space-evenly;
     }
 
     /*------------------------------------donation page-----*/
@@ -1782,6 +1992,8 @@ nav.navigation_container {
         margin-top: auto;
         margin-bottom: -14px;
     }
+
+  
 
     /* --------------------------help page--------------*/
     .help-page {
