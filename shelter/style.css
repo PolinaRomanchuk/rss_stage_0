@@ -137,22 +137,21 @@ nav.navigation_container {
     transition: 0.3s all linear;
 }
 
+
 .mobile-menu {
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
     width: 100%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 10;
-
     display: flex;
     justify-content: flex-end;
+    
     transform: translateX(100%);
-    transition: transform 0.3s linear, background-color 0s linear 0.3s;
-}
-
-.mobile-menu_container {
-    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s, background-color 0s linear 0.3s;
+    z-index: 10;
 }
 
 /*-------header-end------------------------------------------------------------------------------------------------*/
@@ -301,8 +300,12 @@ nav.navigation_container {
     & .wraper {
         height: 877px;
         display: flex;
-        position: relative;
+
     }
+}
+
+.wraper-pets-page {
+    position: relative;
 }
 
 .pets-page_container {
@@ -1388,9 +1391,11 @@ nav.navigation_container {
     }
 
     .mobile-menu.clicked {
-        overflow: visible;
-        background: rgba(40, 40, 40, 0.5);
         transform: translateX(0%);
+        background: rgba(40, 40, 40, 0.5);
+        opacity: 1;
+        visibility: visible;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s, background-color 0s linear 0.3s;
     }
 
     .mobile-menu_container {
@@ -1993,7 +1998,7 @@ nav.navigation_container {
         margin-bottom: -14px;
     }
 
-  
+
 
     /* --------------------------help page--------------*/
     .help-page {

@@ -18,8 +18,9 @@ burgerIcon.onclick = function (e) {
     toggleMenu();
 }
 burgerMenu.onclick = function (e) {
-    if (!e.target.closest('.mobile-menu.clicked')) { toggleMenu(); }
+    if (!e.target.closest('.mobile-menu_container')) { toggleMenu(); }
 }
+
 navigationLinks.forEach(link => {
     link.onclick = function (e) {
         let linkPath = this.getAttribute('href');
