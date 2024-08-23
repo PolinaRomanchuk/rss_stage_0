@@ -146,7 +146,7 @@ nav.navigation_container {
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    
+
     transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
@@ -343,6 +343,7 @@ nav.navigation_container {
     height: 435px;
 
     display: flex;
+    position: relative;
 }
 
 .slider-arrow {
@@ -366,15 +367,52 @@ nav.navigation_container {
     }
 }
 
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 405px;
+    
+}
+
+.carousel-inner {
+    display: flex;
+    position: relative;
+    left: 0;
+}
+
+
+
+.slider-move-right {
+    transition: transform 1.0s ease;
+    transform: translateX(-100%);
+}
+
+.slider-move-left {
+    transition: transform 1.0s ease;
+    transform: translateX(0);
+}
+
+.slider-reset {
+    transition: none;
+    transform: translateX(-100%);
+}
+
+
+
+
 .pets-page_pet-carts_container {
     display: flex;
-    margin: 0 auto;
-    overflow: hidden;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    
 }
 
 .pets-page_pet-cart {
-    padding-right: 45px;
-    padding-left: 45px;
+    flex: 0 0 auto;
+    width: 270px;
+    margin: 0 45px;
+
 
     &:hover {
         box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -972,9 +1010,7 @@ nav.navigation_container {
 
     /*------------------------pets page-----------------------------*/
 
-    .pets-page_pet-carts_container {
-        max-width: 660px;
-    }
+
 
     .pets-page_pet-carts_container.our-pets-page {
         max-height: 870px;
