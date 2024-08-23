@@ -368,10 +368,9 @@ nav.navigation_container {
 }
 
 .carousel-wrapper {
-    width: 100%;
     overflow: hidden;
     height: 405px;
-    
+    width: 1080px;
 }
 
 .carousel-inner {
@@ -379,8 +378,6 @@ nav.navigation_container {
     position: relative;
     left: 0;
 }
-
-
 
 .slider-move-right {
     transition: transform 1.0s ease;
@@ -397,22 +394,16 @@ nav.navigation_container {
     transform: translateX(-100%);
 }
 
-
-
-
 .pets-page_pet-carts_container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
-    
 }
 
 .pets-page_pet-cart {
     flex: 0 0 auto;
     width: 270px;
     margin: 0 45px;
-
 
     &:hover {
         box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -980,6 +971,35 @@ nav.navigation_container {
 
 /*---------------------------------------------------------Adaptability------------------------------------------*/
 
+
+@media screen and (max-width: 1260px) {
+
+    .pets-page_slider_container {
+        width: 100%;
+        height: 435px;
+        display: flex;
+        position: relative;
+        justify-content: space-between;
+    }
+
+    .slider-arrow {
+        border: none;
+        background: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .carousel-wrapper {
+        width: 600px;
+    }
+
+    .pets-page_pet-cart {
+        margin: 0 15px;
+    }
+}
+
 @media screen and (max-width:1120px) {
 
     /* -----------------------about page----------------------------*/
@@ -1241,13 +1261,9 @@ nav.navigation_container {
         margin: auto;
     }
 
-    .pets-page_pet-carts_container {
-        overflow: hidden;
-    }
-
     .pets-page_pet-cart {
-        padding-right: 17px;
-        padding-left: 17px;
+        padding-right: 0px;
+        padding-left: 0px;
     }
 
     .pet-cart-photo {
@@ -1256,7 +1272,7 @@ nav.navigation_container {
     }
 
     .slider-arrow {
-        margin-top: 188px;
+        margin-top: 0px;
     }
 
 
@@ -1489,10 +1505,7 @@ nav.navigation_container {
     }
 
     /*----------------------------------------pets page---------*/
-    .pets-page_pet-carts_container {
-        max-width: 270px;
-        padding: 0;
-    }
+
 
     .slider-arrow {
         margin-left: 0;
@@ -1550,6 +1563,35 @@ nav.navigation_container {
     .donation-page_header {
         font-size: 25px;
     }
+}
+
+
+@media screen and (max-width:710px) {
+
+    .pets-page_slider_container {
+        width: 270px;
+        height: 480px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0;
+    }
+
+    .carousel-wrapper {
+        width: 270px;
+        height: 440px;
+        order: -1;
+    }
+
+    .pets-page_pet-carts_container {
+        width: 270px;
+    }
+
+    .pets-page_pet-cart {
+        padding: 0px;
+        margin: 0;
+    }
+
+
 }
 
 @media screen and (max-width:650px) {
@@ -1783,30 +1825,6 @@ nav.navigation_container {
         line-height: 32.5px;
     }
 
-    .pets-page_content_header_container {
-        width: 100%;
-        max-width: 320px;
-        height: 74px;
-    }
-
-    .pets-page_slider_container {
-        width: 270px;
-        height: 480px;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-
-    .pets-page_pet-carts_container {
-        height: 452px;
-        margin: auto;
-        overflow: hidden;
-        order: -1;
-    }
-
-    .slider-arrow {
-        margin-top: 0;
-    }
-
     /*----------------------------help page-----*/
     .help-page {
         height: 809px;
@@ -2031,10 +2049,8 @@ nav.navigation_container {
 
     .slider-arrow {
         margin-top: auto;
-        margin-bottom: -14px;
+        margin-bottom: -25px;
     }
-
-
 
     /* --------------------------help page--------------*/
     .help-page {

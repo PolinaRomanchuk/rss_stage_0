@@ -14,6 +14,7 @@ let cartsNumber = 0;
 let currentPets = [];
 let previousPets = null;
 let isTransitioning = false;
+let previousWidth = window.innerWidth;
 
 async function getPetsData() {
     const response = await fetch('../shelter/assets/dataPets.json');
@@ -35,14 +36,13 @@ async function getRandomPets(number) {
 }
 
 function getCartsNumber() {
-    if (window.innerWidth <= 738) {
-        cartsNumber = 1;
+    if (window.innerWidth <= 710) {
+        return 1;
     } else if (window.innerWidth <= 1260) {
-        cartsNumber = 2;
+        return 2;
     } else {
-        cartsNumber = 3;
+        return 3;
     }
-    return cartsNumber;
 }
 
 function createCart(pet) {
@@ -108,7 +108,7 @@ async function slideCarousel(direction) {
     } else if (direction === 'left') {
         newCarts.forEach(cart => petsContainer.prepend(cart));
 
-        petsContainer.classList.add('slider-reset'); 
+        petsContainer.classList.add('slider-reset');
         petsContainer.classList.remove('slider-move-left');
         requestAnimationFrame(() => {
             setTimeout(() => {
@@ -134,17 +134,23 @@ arrows.forEach(arrow => {
     });
 });
 
-async function drawCarts() {
-    const petsInSlider = await getRandomPets(getCartsNumber());
-    petsContainer.innerHTML = '';
-    petsInSlider.forEach(pet => {
-        let cart = createCart(pet);
-        petsContainer.append(cart);
-    });
-    currentPets = [...petsInSlider];
+async function drawCarts(initialLoad = false) {
+    const newCartsNumber = getCartsNumber();
+
+    if (initialLoad || (window.innerWidth < previousWidth && newCartsNumber !== cartsNumber)) {
+        cartsNumber = newCartsNumber;
+        const petsInSlider = await getRandomPets(cartsNumber);
+        petsContainer.innerHTML = '';
+        petsInSlider.forEach(pet => {
+            let cart = createCart(pet);
+            petsContainer.append(cart);
+        });
+        currentPets = [...petsInSlider];
+    }
+    previousWidth = window.innerWidth;
 }
 
-window.addEventListener('load', drawCarts);
+window.addEventListener('load', () => drawCarts(true));
 window.addEventListener('resize', drawCarts);
 
 
