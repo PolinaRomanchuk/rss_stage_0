@@ -10,6 +10,7 @@ let closeButton = document.querySelector(".modal-window_close");
 let petsContainer = document.querySelector(".pets-page_pet-carts_container");
 let arrows = document.querySelectorAll(".slider-arrow");
 
+
 let cartsNumber = 0;
 let currentPets = [];
 let previousPets = null;
