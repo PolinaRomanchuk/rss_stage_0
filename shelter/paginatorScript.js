@@ -1,6 +1,15 @@
-let petsContainer = document.querySelector(".pets-page_pet-carts_container__our-pets-page");
+let ourPetsContainer = document.querySelector(".pets-page_pet-carts_container__our-pets-page");
 let btnpaginator = document.querySelectorAll(".btn-paginator");
 let activeBtn = document.querySelector(".btn-paginator.active");
+let petsCartsNumberPerPage = 0;
+let maxPagesNumber = 0;
+let activePage = 1;
+let currentValuePaginatorPage = 1;
+const petsList = [];
+
+
+
+
 let burgerIcon = document.querySelector(".burger-menu");
 let burgerMenu = document.querySelector(".mobile-menu");
 let burgerMenuContainer = document.querySelector(".mobile-menu_container");
@@ -10,13 +19,10 @@ let petCarts = document.querySelectorAll(".pets-page_pet-cart");
 let modalWindow = document.querySelector(".modal-window");
 let modalWindowContent = document.querySelector(".modal-window_content");
 let closeButton = document.querySelector(".modal-window_close");
-let arrows = document.querySelectorAll(".slider-arrow");
 let previousWidth = window.innerWidth;
-let petsCartsNumberPerPage = 0;
-let maxPagesNumber = 0;
-let activePage = 1;
-let currentValuePaginatorPage = 1;
-const petsList = [];
+
+
+
 
 
 async function getPetsData() {
@@ -25,14 +31,14 @@ async function getPetsData() {
     return data;
 }
 
-async function getAllPets(number) {
+async function getAllPetsinPaginator(number) {
     const datapets = await getPetsData();
     let allPetsInPaginator = Array(6).fill(datapets).flat();
     allPetsInPaginator.sort(() => Math.random() - 0.5);
     while (allPetsInPaginator.length) {
         let pagePets = [];
 
-        while (pagePets.length < number && allPetsInPaginator.length) {
+        while (pagePets.length < 8 && allPetsInPaginator.length) {
             let pet = allPetsInPaginator.shift();
 
             if (!pagePets.some(p => p.name === pet.name)) {
@@ -49,7 +55,7 @@ async function getAllPets(number) {
     console.log(petsList);
 }
 
-function getCartsNumber() {
+function getCartsNumberinPaginator() {
     if (window.innerWidth <= 600) {
         return 3;
     } else if (window.innerWidth <= 1080) {
@@ -59,9 +65,9 @@ function getCartsNumber() {
     }
 }
 
-function createCart(pet) {
+function createCart(pet, className) {
     let cart = document.createElement('div');
-    cart.className = 'pets-page_pet-cart our-pets-page';
+    cart.className = className;
 
     cart.innerHTML = `
         <div class="pet-cart-photo">
@@ -80,17 +86,17 @@ function createCart(pet) {
 }
 
 
-async function drawCarts(activePage) {
-    petsCartsNumberPerPage = getCartsNumber();
+async function drawCartsinPaginator(activePage) {
+    petsCartsNumberPerPage = getCartsNumberinPaginator();
 
     let startindex = (petsCartsNumberPerPage * activePage) - petsCartsNumberPerPage;
 
     let pets = petsList.slice([startindex], [petsCartsNumberPerPage * activePage]);
 
-    petsContainer.innerHTML = '';
+    ourPetsContainer.innerHTML = '';
     pets.forEach(pet => {
-        let cart = createCart(pet);
-        petsContainer.append(cart);
+        let cart = createCart(pet, 'pets-page_pet-cart our-pets-page');
+        ourPetsContainer.append(cart);
     });
 
 }
@@ -116,7 +122,7 @@ btnpaginator.forEach(btn => btn.addEventListener('click', (e) => {
             activePage++;
             currentValuePaginatorPage++;
             activeBtn.textContent = currentValuePaginatorPage;
-            drawCarts(activePage);
+            drawCartsinPaginator(activePage);
         }
         if (currentValuePaginatorPage > 1) {
             document.querySelector(".btn-paginator.prev").classList.remove('inactive');
@@ -133,7 +139,7 @@ btnpaginator.forEach(btn => btn.addEventListener('click', (e) => {
             activePage--;
             currentValuePaginatorPage--;
             activeBtn.textContent = currentValuePaginatorPage;
-            drawCarts(activePage);
+            drawCartsinPaginator(activePage);
         }
         if (currentValuePaginatorPage == 1) {
             document.querySelector(".btn-paginator.prev").classList.add('inactive');
@@ -154,7 +160,7 @@ btnpaginator.forEach(btn => btn.addEventListener('click', (e) => {
         document.querySelector(".btn-paginator.next").classList.add('inactive');
         document.querySelector(".btn-paginator.prev").classList.remove('inactive');
         document.querySelector(".btn-paginator.to-first").classList.remove('inactive');
-        drawCarts(activePage);
+        drawCartsinPaginator(activePage);
     }
     if (e.target.classList.contains('to-first')) {
         activeBtn.textContent = 1;
@@ -164,24 +170,24 @@ btnpaginator.forEach(btn => btn.addEventListener('click', (e) => {
         document.querySelector(".btn-paginator.prev").classList.add('inactive');
         document.querySelector(".btn-paginator.next").classList.remove('inactive');
         document.querySelector(".btn-paginator.to-last").classList.remove('inactive');
-        drawCarts(activePage);
+        drawCartsinPaginator(activePage);
     }
 
 }))
 
 
 window.addEventListener('load', async () => {
-    await getAllPets(getCartsNumber());
-    drawCarts(1);
+    await getAllPetsinPaginator(getCartsNumberinPaginator());
+    drawCartsinPaginator(1);
 });
 
 window.addEventListener('resize', async () => {
-    const newCartsNumber = getCartsNumber();
+    const newCartsNumber = getCartsNumberinPaginator();
     if (newCartsNumber !== petsCartsNumberPerPage) {
         petsCartsNumberPerPage = newCartsNumber;
         maxPagesNumber = 48 / petsCartsNumberPerPage;
         resetPaginator();
-        drawCarts(1);
+        drawCartsinPaginator(1);
     }
 });
 
