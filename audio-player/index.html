@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Audio-player</title>
+</head>
+
+<body>
+    <main>
+        <audio src="./audio/Rammstein - Rosenrot.mp3"></audio>
+
+
+        <div class="audio-wraper">
+            <div class="audio-container">
+                <div class="curr-music-container">
+                    <div class="music-img-container">
+                        <img src="./assets/img/Rammstein_Rosenrot.jpg" alt="photo music">
+                    </div>
+                    <div class="main-info-music-container">
+                        <div class="author-music">Rammstein</div>
+                        <div class="name-music">Rosenrot</div>
+                        <div class="time">
+                            <div class="start-time">00.00</div>
+                            <div class="end-time">3.54</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="playpointer"></div>
+                        </div>
+                        <div class="action-menu-container">
+                            <button class="prev-music player-btn"><img src="./assets/svg/left.svg" alt="left"></button>
+                            <button class="play-btn player-btn"></button>
+                            <button class="next-music player-btn"><img src="./assets/svg/right.svg"
+                                    alt="right"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-music">
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+
+
+    <footer>
+        <a href="https://rs.school/courses/javascript-ru" class="link-rsschool">
+            <img src="/audio-player/rs_school_js.svg" alt="logo rsschool" class="logo-rsschool">
+        </a>
+        <a href="https://github.com/PolinaRomanchuk" class="link-github">
+            <span class="github">GitHub</span>
+        </a>
+        <div class="year-project">©2024</div>
+    </footer>
+</body>
+<script src="./script.js"></script>
+
+</html>
