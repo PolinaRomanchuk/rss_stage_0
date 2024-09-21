@@ -16,7 +16,7 @@ body {
 
 body::after {
     content: "";
-    background-image: url('./assets/img/Rammstein_Rosenrot.jpg');
+    background-image: var(--background-url);
     background-size: cover;
     opacity: 0.6;
     top: 0;
@@ -142,10 +142,11 @@ footer {
     }
 }
 
-.prev-music,
-.next-music {
+.prev-music.player-btn,
+.next-music.player-btn {
     padding: 5px;
 }
+
 
 .play-btn {
     background-image: url("./assets/svg/play.svg");
