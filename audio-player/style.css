@@ -58,7 +58,7 @@ footer {
     width: 50%;
     display: flex;
     justify-content: center;
-    background-color: rgba(207, 246, 246, 0.941);
+    background-color: rgb(207 246 246 / 48%);
     margin: auto;
     border-radius: 2px;
     box-shadow: -3px 3px 14px 10px rgba(17, 26, 26, 0.492)
@@ -68,12 +68,12 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-
 }
 
 .curr-music-container {
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 }
 
 .music-img-container {
@@ -104,10 +104,8 @@ footer {
     position: relative;
     width: 100%;
     height: 10px;
-
     border-radius: 15px;
-    background: rgba(0, 0, 0, .3);
-    overflow: hidden;
+    background: rgba(0, 0, 0, 0.232);
 
     &:hover {
         cursor: pointer;
@@ -115,10 +113,11 @@ footer {
 }
 
 .progress-line {
-    background: rgb(67, 165, 175);
     width: 0%;
     height: 100%;
     transition: width 0.25s;
+    border-radius: 15px;
+    background: rgb(67, 165, 175);
 }
 
 .playpointer {
@@ -178,4 +177,64 @@ footer {
 .pause-btn {
     background-image: url("./assets/svg/stop.svg");
     background-size: contain;
+}
+
+.list-music {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.music-cart {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(122 210 218 / 36%);
+    }
+}
+
+.music-cart.active {
+    background-color: rgb(122 210 218 / 36%);
+
+    & .img-music-cart {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./assets/img/play.gif');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    }
+}
+
+.img-music-cart {
+    & img {
+        border-radius: 5px;
+        width: 50px;
+    }
+}
+
+.main-info-music-cart {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+
+    & .author-music-cart {
+        font-size: 20px;
+    }
+
+    & .name-music-cart {
+        font-size: 14px;
+    }
 }

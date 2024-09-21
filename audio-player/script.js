@@ -13,6 +13,9 @@ let timeline = document.querySelector('.progress-bar');
 let progressline = document.querySelector('.progress-line');
 let playpointer = document.querySelector('.playpointer');
 
+let listMusicContainer = document.querySelector('.list-music');
+
+let activeMusicCart = null;
 let currentMusicIndex = 0;
 let isPlay = false;
 
@@ -85,25 +88,28 @@ function switchMusic(direction) {
     if (direction == "right") {
         if (currentMusicIndex < musicList.length - 1) {
             currentMusicIndex += 1;
-            showMusic(currentMusicIndex);
         } else {
             currentMusicIndex = 0;
-            showMusic(currentMusicIndex);
         }
-
     }
     if (direction == "left") {
         if (currentMusicIndex > 0) {
             currentMusicIndex -= 1;
-            showMusic(currentMusicIndex);
         }
         else {
             currentMusicIndex = musicList.length - 1;
-            showMusic(currentMusicIndex);
         }
     }
+
+    showMusic(currentMusicIndex);
     isPlay = false;
     playMusic();
+    if (activeMusicCart) {
+        activeMusicCart.classList.remove("active");
+    }
+    let musicCart = document.querySelectorAll('.music-cart');
+    activeMusicCart = musicCart[currentMusicIndex];
+    activeMusicCart.classList.add("active");
 }
 
 musicSwitch.forEach(arrow => {
@@ -122,7 +128,6 @@ function autoUpdateProgress() {
     currentMusicTime.textContent = formattedTime(currentTime);
 }
 
-
 function handUpdateProgress(e) {
     let timelineСoordinates = timeline.getBoundingClientRect();
     let cursorX = e.clientX - timelineСoordinates.left;
@@ -136,6 +141,55 @@ function handUpdateProgress(e) {
     }
 }
 
+async function createMusicCarts() {
+    for (let music of musicList) {
+        let audio = new Audio(music.path);
+
+        await new Promise(resolve => {
+            audio.addEventListener('loadedmetadata', () => resolve());
+        });
+
+        let cart = document.createElement('div');
+        cart.className = "music-cart";
+        cart.setAttribute('data-id', music.id);
+
+        cart.innerHTML = `
+        <div class="img-music-cart">
+            <img src="${music.img}" alt="cover photo">
+        </div>
+        <div class="main-info-music-cart">
+            <div class="author-music-cart">${music.author}</div>
+            <div class="name-music-cart">${music.musicName}</div>
+        </div>
+        <div class="duration-music-cart">${formattedTime(audio.duration)}</div>
+        `;
+
+        listMusicContainer.appendChild(cart);
+    }
+
+    let musicCart = document.querySelectorAll('.music-cart');
+    musicCart.forEach(cart => {
+        cart.addEventListener('click', (e) => {
+            let cartElement = e.currentTarget;
+            let cartId = cartElement.getAttribute('data-id');
+            let index = musicList.findIndex(music => music.id == cartId);
+            currentMusicIndex = index;
+            showMusic(currentMusicIndex);
+            isPlay = false;
+            playMusic();
+            if (activeMusicCart) {
+                activeMusicCart.classList.remove("active");
+            }
+            activeMusicCart = cartElement;
+            activeMusicCart.classList.add("active");
+        });
+    });
+    if (musicCart.length > 0) {
+        musicCart[0].classList.add("active");
+        activeMusicCart = musicCart[0];
+    }
+}
+
 timeline.addEventListener('click', handUpdateProgress);
 
 music.addEventListener('timeupdate', autoUpdateProgress);
@@ -146,6 +200,7 @@ music.addEventListener('ended', () => switchMusic('right'));
 
 window.addEventListener('load', () => {
     showMusic(0);
+    createMusicCarts();
 });
 
 function formattedTime(time) {
