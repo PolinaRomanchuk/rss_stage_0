@@ -1,16 +1,21 @@
-const music = document.querySelector("audio");
+let music = document.querySelector("audio");
 
 let cover = document.querySelector(".music-cover");
 let author = document.querySelector(".author-music");
 let musicName = document.querySelector(".name-music");
 let musicDuration = document.querySelector(".end-time");
+let currentMusicTime = document.querySelector(".start-time");
 
-const playorstopMusicBtn = document.querySelector('.play-btn');
+let playOrStopMusicBtn = document.querySelector('.play-btn');
 let musicSwitch = document.querySelectorAll('.arrow');
 
+let timeline = document.querySelector('.progress-bar');
+let progressline = document.querySelector('.progress-line');
+let playpointer = document.querySelector('.playpointer');
 
 let currentMusicIndex = 0;
 let isPlay = false;
+
 let musicList = [
     {
         "id": 1,
@@ -24,7 +29,7 @@ let musicList = [
         "path": "./assets/audio/Linkin Park - In The End.mp3",
         "img": "./assets/img/linkin.jpg",
         "author": "Linkin Park",
-        "musicName": "In The End"
+        "musicName": "In the end"
     },
     {
         "id": 3,
@@ -45,19 +50,19 @@ let musicList = [
         "path": "./assets/audio/МакSим - Знаешь Ли Ты.mp3",
         "img": "./assets/img/максим.jpg",
         "author": "МакSим",
-        "musicName": "Знаешь Ли Ты"
+        "musicName": "Знаешь ли ты"
     }
 ]
 
 function playMusic() {
     if (!isPlay) {
         isPlay = true;
-        playorstopMusicBtn.classList.add('pause-btn');
+        playOrStopMusicBtn.classList.add('pause-btn');
         music.play();
     }
     else {
         isPlay = false;
-        playorstopMusicBtn.classList.toggle('pause-btn');
+        playOrStopMusicBtn.classList.toggle('pause-btn');
         music.pause();
     }
 }
@@ -71,11 +76,7 @@ function showMusic(index) {
         author.textContent = track.author;
         musicName.textContent = track.musicName;
         music.onloadedmetadata = () => {
-            const duration = music.duration;
-            const minutes = Math.floor(duration / 60);
-            const seconds = Math.floor(duration % 60);
-            const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
-            musicDuration.textContent = `${minutes}:${formattedSeconds}`;
+            musicDuration.textContent = formattedTime(music.duration);
         }
     }
 }
@@ -112,9 +113,44 @@ musicSwitch.forEach(arrow => {
     });
 });
 
+function autoUpdateProgress() {
+    let duration = music.duration;
+    let currentTime = music.currentTime;
+    let progressPercent = (currentTime / duration) * 100;
+    progressline.style.width = `${progressPercent}%`;
+    playpointer.style.left = `${progressPercent}%`;
+    currentMusicTime.textContent = formattedTime(currentTime);
+}
 
-playorstopMusicBtn.addEventListener('click', playMusic);
+
+function handUpdateProgress(e) {
+    let timelineСoordinates = timeline.getBoundingClientRect();
+    let cursorX = e.clientX - timelineСoordinates.left;
+    let totalWidth = timelineСoordinates.width;
+    let percent = cursorX / totalWidth;
+    let newTime = percent * music.duration;
+
+    music.currentTime = newTime;
+    if (!isPlay) {
+        playMusic();
+    }
+}
+
+timeline.addEventListener('click', handUpdateProgress);
+
+music.addEventListener('timeupdate', autoUpdateProgress);
+
+playOrStopMusicBtn.addEventListener('click', playMusic);
+
+music.addEventListener('ended', () => switchMusic('right'));
 
 window.addEventListener('load', () => {
     showMusic(0);
 });
+
+function formattedTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+    return `${minutes}:${formattedSeconds}`;
+}
