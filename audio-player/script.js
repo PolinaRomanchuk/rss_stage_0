@@ -171,17 +171,22 @@ async function createMusicCarts() {
     musicCart.forEach(cart => {
         cart.addEventListener('click', (e) => {
             let cartElement = e.currentTarget;
-            let cartId = cartElement.getAttribute('data-id');
-            let index = musicList.findIndex(music => music.id == cartId);
-            currentMusicIndex = index;
-            showMusic(currentMusicIndex);
-            isPlay = false;
-            playMusic();
-            if (activeMusicCart) {
-                activeMusicCart.classList.remove("active");
+            if (cartElement == activeMusicCart) {
+                playMusic();
             }
-            activeMusicCart = cartElement;
-            activeMusicCart.classList.add("active");
+            else {
+                let cartId = cartElement.getAttribute('data-id');
+                let index = musicList.findIndex(music => music.id == cartId);
+                currentMusicIndex = index;
+                showMusic(currentMusicIndex);
+                isPlay = false;
+                playMusic();
+                if (activeMusicCart) {
+                    activeMusicCart.classList.remove("active");
+                }
+                activeMusicCart = cartElement;
+                activeMusicCart.classList.add("active");
+            }
         });
     });
     if (musicCart.length > 0) {
