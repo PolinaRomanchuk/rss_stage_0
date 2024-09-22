@@ -183,21 +183,25 @@ footer {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    background-color: rgba(207, 246, 246, 0.3);
 }
 
 .music-cart {
     margin-top: 10px;
     display: flex;
     justify-content: space-around;
+    transition: background-color 0.3s ease-in-out;
+
 
     &:hover {
         cursor: pointer;
-        background-color: rgb(122 210 218 / 36%);
+        background-color: rgb(207 246 246 / 48%);
     }
 }
 
 .music-cart.active {
-    background-color: rgb(122 210 218 / 36%);
+    background-color: rgb(207 246 246 / 48%);
+    
 
     & .img-music-cart {
         position: relative;
