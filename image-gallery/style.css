@@ -1,0 +1,119 @@
+html {
+    font-family: 'Candara';
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+header {
+    position: fixed;
+
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 10px;
+    background-color: #ffffffeb;
+
+    .header_name {
+        font-size: 40px;
+        color: #607D8B;
+    }
+
+    .search_container {
+        position: relative;
+
+        width: 100%;
+        margin: 10px 0px 20px 0px;
+        display: flex;
+
+        input {
+            width: 95%;
+            height: 40px;
+
+            padding-left: 15px;
+            font-family: inherit;
+            font-size: 1rem;
+            background-color: #9e9e9e14;
+            border: 1px solid #9e9e9e2b;
+            transition: box-shadow 0.15s ease-out;
+
+            &:focus-visible {
+                outline: none;
+                box-shadow: rgb(43 48 51 / 21%) 3px 6px 29px 1px;
+            }
+        }
+
+        .icon-search_button {
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+            right: 1.1rem;
+            cursor: pointer;
+            border: #607d8b61 1px solid;
+
+            & img {
+                width: 30px;
+            }
+
+            .search_btn_text {
+                font-family: 'Candara';
+                font-size: 18px;
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+.photos_container {
+    width: 99%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 170px auto 10px auto;
+    gap: 20px;
+}
+
+.photo_container {
+    max-width: 400px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-shrink: 0;
+
+    & .year-project,
+    & .link-github {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        text-decoration: unset;
+        color: black;
+    }
+
+    & .logo-rsschool {
+        width: 100px;
+    }
+}
