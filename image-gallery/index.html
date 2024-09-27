@@ -15,8 +15,11 @@
         <header>
             <div class="header_name">PhotoGallery</div>
             <div class="search_container ">
-                <input type="text" placeholder="search...">
-                <button class="icon-search_button">
+                <input type="text" placeholder="search..." autofocus autocomplete="off" readonly onfocus="this.removeAttribute('readonly')">
+                <div class="icon_delete">
+                    <img src="./assets/img/delete.png" alt="delete">
+                </div>
+                <button class="icon-search_button" value="Submit">
                     <img src="./assets/img/icon.png">
                     <span class="search_btn_text">Find</span>
                 </button>
@@ -24,59 +27,7 @@
         </header>
 
         <div class="photos_container">
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-
-
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-
-
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <div class="photo_container">
-                    <img src="./assets/img/cat.png">
-                </div>
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-            <div class="photo_container">
-                <img src="./assets/img/cat.png">
-            </div>
-
         </div>
-        </div>
-
 
     </main>
 
@@ -91,5 +42,6 @@
     </footer>
 
 </body>
+<script src="script.js"></script>
 
 </html>

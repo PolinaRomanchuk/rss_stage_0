@@ -56,6 +56,16 @@ header {
             }
         }
 
+        .icon_delete {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 0;
+            bottom: 0;
+            right: 7.1rem;
+            cursor: pointer;
+        }
+
         .icon-search_button {
             position: absolute;
 
