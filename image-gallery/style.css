@@ -25,11 +25,11 @@ header {
     left: 0;
     z-index: 10;
     padding: 10px;
-    background-color: #ffffffeb;
+    background-color: #fffffff7;
 
     .header_name {
         font-size: 40px;
-        color: #607D8B;
+        color: #464b4e;
     }
 
     .search_container {
@@ -90,23 +90,94 @@ header {
     }
 }
 
-.photos_container {
-    width: 99%;
+.main-content {
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 170px auto 10px auto;
-    gap: 20px;
+    margin-top: 130px;
 }
 
-.photo_container {
-    max-width: 400px;
+.navigation_topics_menu {
+    position: fixed;
+    height: 100%;
+    width: 200px;
 
-    & img {
-        width: 100%;
+    background-color: #607d8b08;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+
+    transform: translateX(0%);
+    transition: transform 0.3s ease;
+
+    .topics_header_container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .navigation_topics_header {
+            font-size: 16px;
+        }
+    }
+
+    &.hidden {
+        transform: translateX(-100%);
+    }
+
+    .tag_btn {
+        margin-left: 5px;
+        margin-bottom: 10px;
+        padding: 7px;
+        font-family: inherit;
+        cursor: pointer;
+        background-color: #9e9e9e14;
+        border: 1px solid #9e9e9e2b;
     }
 }
 
+.arrow_btn {
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+
+    & img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &.right {
+        position: absolute;
+        margin-top: 11px;
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+    }
+}
+
+.photos_container {
+    width: calc(100% - 240px);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px auto 10px 220px;
+    gap: 20px;
+
+    .photo_container {
+        max-width: 400px;
+        max-height: 270px;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &.full_width {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+    }
+}
 
 footer {
     width: 100%;
