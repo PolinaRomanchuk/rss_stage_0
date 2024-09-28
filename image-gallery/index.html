@@ -15,7 +15,8 @@
         <header>
             <div class="header_name">PhotoGallery</div>
             <div class="search_container ">
-                <input type="text" placeholder="search..." autofocus autocomplete="off" readonly onfocus="this.removeAttribute('readonly')">
+                <input type="text" placeholder="search..." autofocus autocomplete="off" readonly
+                    onfocus="this.removeAttribute('readonly')">
                 <div class="icon_delete">
                     <img src="./assets/img/delete.png" alt="delete">
                 </div>
@@ -26,9 +27,26 @@
             </div>
         </header>
 
-        <div class="photos_container">
-        </div>
+        <div class="main-content">
+            <button class="arrow_btn right">
+                <img src="./assets/img/right.png" alt="right arrow">
+            </button>
 
+            <aside class="navigation_topics_menu">
+                <div class="topics_header_container">
+                    <span class="navigation_topics_header">Categories</span>
+                    <button class="arrow_btn left">
+                        <img src="./assets/img/left.png" alt="left arrow">
+                    </button>
+                </div>
+
+                <div class="topics_container">
+                </div>
+            </aside>
+
+            <div class="photos_container">
+            </div>
+        </div>
     </main>
 
     <footer>
