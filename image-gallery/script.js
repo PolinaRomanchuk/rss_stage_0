@@ -4,7 +4,7 @@ let category = "cat";
 const photosContainer = document.querySelector('.photos_container');
 const topicsContainer = document.querySelector('.topics_container');
 const inputField = document.querySelector('input');
-const searchBTN = document.querySelector('.icon-search_button');
+const searchBTN = document.querySelector('.search_button');
 const deleteBTN = document.querySelector('.icon_delete');
 
 const hiddenMenuBTH = document.querySelector('.left');
@@ -21,8 +21,25 @@ function getURLByCategory(category) {
 async function getPhotos() {
     const res = await fetch(getURLByCategory(category));
     const data = await res.json();
-    showPhotos(data.results);
+
+    if (data.results && data.results.length > 0) {
+        showPhotos(data.results);
+    } else {
+        showError();
+    }
 }
+
+function showError(){
+    photosContainer.innerHTML = `
+    <div class="error_container">
+    <span>Nothing was found on the search. Try another option.</span>
+    <img src="./assets/img/error.png" alt="error img">
+    </div>
+    `
+    
+    ;
+}
+
 
 function showPhotos(photos) {
     photosContainer.innerHTML = '';
@@ -76,16 +93,28 @@ inputField.addEventListener('keydown', (event) => {
 });
 
 hiddenMenuBTH.addEventListener('click', () => {
-    navTopicsMenu.classList.add('hidden');
-    photosContainer.classList.add('full_width');
-    showMenuBTH.classList.add('active');
+    toggleMenu();
 });
 
 showMenuBTH.addEventListener('click', () => {
-    navTopicsMenu.classList.remove('hidden');
-    photosContainer.classList.remove('full_width');
-    showMenuBTH.classList.remove('active');
+    toggleMenu();
 });
+
+function toggleMenu() {
+    navTopicsMenu.classList.toggle('hidden');
+    photosContainer.classList.toggle('full_width');
+    showMenuBTH.classList.toggle('active');
+}
+
+function checkWindowSize() {
+    let isSmallScreen = window.innerWidth <= 630;
+    navTopicsMenu.classList.toggle('hidden', isSmallScreen);
+    photosContainer.classList.toggle('full_width', isSmallScreen);
+    showMenuBTH.classList.toggle('active', isSmallScreen);
+}
 
 getPhotos();
 getTopics();
+
+window.addEventListener('resize', checkWindowSize);
+window.addEventListener('DOMContentLoaded', checkWindowSize);
