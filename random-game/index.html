@@ -11,9 +11,65 @@
 
 <body>
     <main>
-        <div class="cards_container">
-           
+        <div class="rules">
+            <div class="rules_header">Choose your goal and level</div>
+            <div class="rules_wraper">
+                <div class="goal_container">
+                    <div class="goal_header">Goal</div>
+                    <div class="goal_option">
+                        <div>
+                            <input type="radio" id="time_goal" name="goal" value="time" checked>
+                            <label for="time_goal">Time</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="moves_goal" name="goal" value="moves">
+                            <label for="moves_goal">Moves</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="level_container">
+                    <div class="level_header">Level</div>
+                    <div class="level_options">
+                        <div>
+                            <input type="radio" id="easy" name="difficulty" value="easy" checked>
+                            <label for="easy">Easy</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="medium" name="difficulty" value="medium">
+                            <label for="medium">Medium</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="hard" name="difficulty" value="hard">
+                            <label for="hard">Hard</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rules_desk">
+                    <div class="rules_text">You have 3 minutes to win</div>
+                    <div id="grid_demo" class="level_demo">
+                    </div>
+                </div>
+            </div>
+            <button class="start_btn">Start Game</button>
         </div>
+
+        <div class="timer">00:00</div>
+        <div class="moves_checking">0/0</div>
+
+        <div class="cards_container hidden">
+        </div>
+
+        <div class="result_container hidden">
+            <div class="curr_user_result">
+            </div>
+
+            <div class="statistic ">
+            </div>
+
+        </div>
+
     </main>
     <footer>
         <a href="https://rs.school/courses/javascript-ru" class="link-rsschool">
