@@ -57,6 +57,7 @@ isTimesGoal = true;
 let difficulty = 'easy';
 let resultGame = '';
 let gif = '';
+let audio = '';
 
 const levelCardPairs = {
     easy: 4,
@@ -271,7 +272,6 @@ function gameOver() {
     memeContainer.classList.add('hidden');
     resultsContainer.classList.remove('hidden');
     checkResult();
-
     resultContainer.innerHTML = ` <div class="result_text">${resultGame}</div> 
     <div class="result_img"> <img src="${gif}"> </div>
     <div class="moves">Your moves: ${moves}</div>
@@ -421,8 +421,17 @@ function checkResult() {
 function win() {
     resultGame = 'You win!';
     gif = './assets/gif/victory.gif';
+    audio = './assets/music/happy-happy.mp3';
+    playAudio();
 }
 function lose() {
     resultGame = 'You lose';
     gif = './assets/gif/loss.gif';
+    audio = './assets/music/cry-banana-cat.mp3';
+    playAudio();
+}
+
+function playAudio() {
+    let audioElement = new Audio(audio);
+    audioElement.play();
 }
