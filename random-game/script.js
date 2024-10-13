@@ -172,6 +172,16 @@ function createMemeArray() {
 function createCards() {
     memeContainer.textContent = '';
     const memeList = createMemeArray();
+    let pairsNumber = memeList.length;
+    let columns;
+    if (pairsNumber == 8 || pairsNumber == 12) {
+        columns = 4;
+    } else if (pairsNumber == 20) {
+        columns = 5;
+    }
+    memeContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+
+
     for (let meme of memeList) {
         let memeCard = document.createElement('div');
         memeCard.className = "card_container";
