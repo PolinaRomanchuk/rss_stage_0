@@ -4,7 +4,7 @@
 
 ---
 
-## [Shelter](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/shelter/)
+## Shelter [деплой](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/shelter/)
 
 **Описание:**  
 Интерактивный сайт приюта для животных. Содержит две страницы — главную и с карточками питомцев. Добавлена адаптивность, бесконечная карусель, попап с информацией и пагинация.
@@ -21,7 +21,7 @@
 
 ---
 
-## [Audio Player](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/audio-player/)
+## Audio Player [деплой](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/audio-player/)
 
 **Описание:**  
 Кастомный музыкальный плеер с возможностью проигрывания нескольких треков. Смена фона, отображение текущего времени и прогресса.
@@ -38,7 +38,7 @@
 
 ---
 
-## [Image Gallery](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/image-gallery/)
+## Image Gallery [деплой](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/image-gallery/)
 
 **Описание:**  
 Галерея изображений с поиском по ключевым словам. Используется Unsplash API для загрузки изображений. Реализованы функции поиска, интерактивного управления вводом.
@@ -55,7 +55,7 @@
 
 ---
 
-## [Memory Game](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/random-game/)
+## Memory Game [деплой](https://rolling-scopes-school.github.io/polinaromanchuk-JSFEPRESCHOOL2024Q2/random-game/)
 
 **Описание:**  
 Классическая игра на запоминание пар. Игрок переворачивает карточки, чтобы найти совпадения. Добавлены анимации и таблица рекордов.
